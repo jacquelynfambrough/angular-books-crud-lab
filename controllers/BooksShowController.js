@@ -10,14 +10,14 @@ function BooksShowController($http, $routeParams, $location) {
     url: 'https://super-crud.herokuapp.com/books/' + bookId
   }).then(onBooksShowSuccess, onError);
 
-  function onBookShowSuceesss(response{
-    console.log("data for book," bookId, ':', response.data);
+  function onBookShowSuccess(response){
+    // console.log("data for book," bookId, ':', response.data);
     vm.book = response.data;
-  })
+  };
   function onError(error){
     console.log('there was an error:', error);
   }
-   vm.updateBook = function (bookToUpdate);
+   vm.updateBook = function (bookToUpdate){
    $http({
      method: 'PUT',
      url: 'https://super-crud.herokuapp.com/books/' + bookToUpdate._id,

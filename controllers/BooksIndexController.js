@@ -1,5 +1,4 @@
-angular.module('libraryApp')
-  .controller('BooksIndexController', BooksIndexController);
+angular.module('libraryApp');
 
 BooksIndexController.$inject=['$http'];
 function BooksIndexController( $http ) {
@@ -10,7 +9,7 @@ function BooksIndexController( $http ) {
     url: 'https://super-crud.herokuapp.com/books'
   }).then(onBooksIndexSuccess, onError)
 
-  function onBooks IndexSuccess(response){
+  function onBooksIndexSuccess(response){
     console.log("here's the get all books response data!", response.data);
     vm.books = response.data.books;
   }
