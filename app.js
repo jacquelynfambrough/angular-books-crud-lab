@@ -10,9 +10,14 @@ config.$inject = ['$routeProvider', '$locationProvider'];
 function config (  $routeProvider,   $locationProvider  )  {
   $routeProvider
     .when('/', {
-      templateUrl: /* Include the path to the index template */,
-      controller:  /* Which controller do you want the main page to use */,
-      controllerAs:/* What will you call the controller in the html? */
+      templateUrl: 'templates/books/index.html',
+      controller: 'BooksIndexController',
+      controllerAs: 'BooksIndexCtrl'
+    })
+    .when('/books/:id',{
+      templateUrl: 'templates/books/show.html',
+      controller: 'BooksShowController',
+      controllerAs: 'booksShowCtrl'
     })
     /* Include the additional route here! */
     .otherwise({
